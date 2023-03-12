@@ -4,8 +4,11 @@ from Feature_extractor import FEATURE_PEDICTION
 import os
 import numpy as np 
 from werkzeug.utils import secure_filename   
+from flask_ngrok import run_with_ngrok
 
 app = Flask(__name__)
+run_with_ngrok(app)   
+
 @app.route('/', methods=['GET'])
 def hello_world():
     return render_template('index.html')
